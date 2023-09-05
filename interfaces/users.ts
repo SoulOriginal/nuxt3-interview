@@ -1,6 +1,6 @@
 export interface IUser {
     avatar: string,
     title: string,
-    subtitle: HTMLBaseElement
+    subtitle: string
 }
 export type Users = IUser[]

@@ -1,15 +1,20 @@
 import { defineStore } from "pinia";
-import { IUser, Users} from "~~/interfaces/users";
+import { Users } from "~~/interfaces/users";
 import { IUsersStore } from "~~/interfaces/stores/users";
-export const useUsers = defineStore("users", {
+import { IHelperSorterQuery } from "~~/interfaces/api/users";
+export const useUsersStore = defineStore("users", {
   state: (): IUsersStore => ({
     cummon: undefined,
     isLoading: false,
-    filters: {}
+    filters: {},
   }),
   actions: {
-    async featchUsers(variables: any) {
-
+    async featchUsers(variables: IHelperSorterQuery) {
+      const { data } = await useFetch<Users>("/api/users", {
+        query: variables
+      });
+      return data.value
+      console.log(data);
     },
   },
 });
