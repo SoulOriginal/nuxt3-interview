@@ -1,6 +1,10 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "engines": {
+    "node": "^16.11.0 || ^17.0.0 || || ^18.0.0"
+  },
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -8,10 +12,13 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
+  "type": "module",
   "devDependencies": {
     "@nuxt/devtools": "latest",
     "nuxt": "^3.7.0",
-    "sass": "^1.66.1"
+    "sass": "^1.66.1",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.2.2"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",

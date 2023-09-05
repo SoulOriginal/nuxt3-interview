@@ -1,15 +1,9 @@
 <template>
-    <div>
-    test 123
-        <slot />
-    </div>
+  <div>
+    <slot />
+  </div>
 </template>
 
-<script lang="ts" setup>
+<script lang="ts" setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-
-</style>
+<style lang="scss" scoped></style>
