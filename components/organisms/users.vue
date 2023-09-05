@@ -1,7 +1,9 @@
 <template>
   <div>
     <AtomsDualScreen>
-      <template v-slot:left> abc </template>
+      <template v-slot:left>
+        <MoleculesUsersFilters />
+      </template>
       <template v-slot:right>
         <MoleculesUsersList />
       </template>

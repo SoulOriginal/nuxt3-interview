@@ -1,8 +1,7 @@
 <template>
   <div class="list-item">
-    <div>
-      <AtomsImg :src="props.avatar" />
-    </div>
+    <AtomsImg :src="props.avatar" class="list-item__img" />
+
     <div class="list-item__content">
       <h3>
         <p v-html="props.title"></p>
@@ -25,6 +24,10 @@ const props = withDefaults(defineProps<IUser>(), {});
     display: flex;
     flex-direction: column;
     gap: 5px;
+  }
+  &__img {
+    border-radius: 10px;
+    width: 80px;
   }
 }
 </style>

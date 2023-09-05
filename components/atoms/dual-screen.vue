@@ -1,11 +1,8 @@
 <template>
   <div class="dual-screen-wrapper">
-    <section>
-      <slot name="left" />
-    </section>
-    <section>
-      <slot name="right" />
-    </section>
+    <slot name="left" />
+
+    <slot name="right" />
   </div>
 </template>
 
@@ -15,5 +12,6 @@
 .dual-screen-wrapper {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 </style>

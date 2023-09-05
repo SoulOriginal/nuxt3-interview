@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="props.src" alt="User Image" />
+    <img :src="props.src" alt="User Image" class="img" />
   </div>
 </template>
 
@@ -8,4 +8,10 @@
 const props = withDefaults(defineProps<{ src: string }>(), {});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+</style>
