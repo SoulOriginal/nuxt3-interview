@@ -2,10 +2,10 @@
   <div>
     <AtomsDualScreen>
       <template v-slot:left>
-        <MoleculesUsersFilters />
+        <MoleculesUsersFilters class="w100" />
       </template>
       <template v-slot:right>
-        <MoleculesUsersList />
+        <MoleculesUsersList class="w100" />
       </template>
     </AtomsDualScreen>
   </div>

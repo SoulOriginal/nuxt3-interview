@@ -1,24 +1,21 @@
 <template>
-  <div class="content-box">
-    {{ isLoading }}
+  <div class="content-box absolute-center">
     <OrganismsUsers />
-    <!-- <pre>{{ cummon }}}</pre>
-    <button @click="getDaa">getData</button>
-    <button @click="getDaa({ sort_by: 'title', sort_order: 'ASC' })">getData</button>
-    <AtomsCard title="Users List">
-      <AtomsList :users="cummon" />
-    </AtomsCard> -->
   </div>
 </template>
 
 <script lang="ts" setup>
 import { useUsersStore } from "@/stores/users";
-const { featchUsers, isLoading, cummon } = toRefs(useUsersStore());
-const testres = ref([]);
-const getDaa = async (v) => {
-  testres.value = await featchUsers.value(v);
-};
-featchUsers.value();
+const { featchUsers } = toRefs(useUsersStore());
+
+await featchUsers.value({});
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>

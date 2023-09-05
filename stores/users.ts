@@ -11,16 +11,37 @@ export const useUsersStore = defineStore("users", {
   actions: {
     async featchUsers(variables: IHelperSorterQuery) {
       try {
-        this.isLoading = true
+        this.isLoading = true;
         const { data } = await useFetch<Users>("/api/users", {
           query: variables,
         });
-        this.cummon = data.value!
-        this.isLoading = false
+        this.cummon = data.value!;
+        this.isLoading = false;
       } catch (error) {
-        this.isLoading = false
-        console.error(error)
+        this.isLoading = false;
+        console.error(error);
       }
+    },
+  },
+  getters: {
+    getUsersCountries: (state) => {
+      const getCountries = state?.cummon?.map((user) => user.county);
+      return [...new Set(getCountries)];
+    },
+    getUsersTitles: (state) => {
+      const getTitles = state?.cummon?.map((user) => user.title);
+      return [...new Set(getTitles)];
+    },
+    getUsersByFilters: (state) => {
+      const { title, county } = state.filters;
+      let compireData = state.cummon;
+      if (title) {
+        compireData = compireData?.filter((user) => user.title === title);
+      }
+      if (county) {
+        compireData = compireData?.filter((user) => user.county === county);
+      }
+      return compireData;
     },
   },
 });

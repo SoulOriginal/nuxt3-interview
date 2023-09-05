@@ -1,4 +1,4 @@
-type OrderVatiants = "DESC" | "ASC";
+export type OrderVatiants = "DESC" | "ASC";
 import { Users } from "~~/interfaces/users";
 export interface IHelperSorterArgs {
   order: OrderVatiants;
@@ -6,6 +6,6 @@ export interface IHelperSorterArgs {
 }
 
 export interface IHelperSorterQuery {
-  sort_by: "title";
-  sort_order: OrderVatiants;
+  sort_by?: "title";
+  sort_order?: OrderVatiants;
 }
