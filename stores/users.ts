@@ -10,11 +10,17 @@ export const useUsersStore = defineStore("users", {
   }),
   actions: {
     async featchUsers(variables: IHelperSorterQuery) {
-      const { data } = await useFetch<Users>("/api/users", {
-        query: variables
-      });
-      return data.value
-      console.log(data);
+      try {
+        this.isLoading = true
+        const { data } = await useFetch<Users>("/api/users", {
+          query: variables,
+        });
+        this.cummon = data.value!
+        this.isLoading = false
+      } catch (error) {
+        this.isLoading = false
+        console.error(error)
+      }
     },
   },
 });
