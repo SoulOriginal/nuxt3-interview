@@ -1,7 +1,6 @@
 <template>
-  <AtomsCard class="w100 max-w-50-perscents">
+  <AtomsCard class="w100 max-w-50-perscents" title="Local Filters">
     <section>
-      <h2>Local Filters</h2>
       <div>
         <p>Filter by Title</p>
         <select class="w100" v-model="filters.title">
